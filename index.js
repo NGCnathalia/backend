@@ -1,15 +1,16 @@
 //se importa el paquete express que proporciona funcionalidad para crear aplicaciones web en node
 const express = require("express");
 //importa la libreria mongoose  //moongose es odm para mongodb, permite interactuar con una base de datos 
+
 const mongoose = require("mongoose");
-// const cors = require("cors");
+const cors = require("cors");
 
 
 //definimos la constante PORT con el numero de puerto que la aplicación utilizara para escuchar solicitudes, en este caso 3030
 const PORT = 3030;
 //se crea una instancia de la aplicacion de express //el resultado de esta llamada se le asigna a la constante app //con esta constante podemos acceder a todos los metodos y funciones proporcionados por express
 const app = express();
-
+app.use(cors());
 //se importa el modulo "todoRoutes" desde el archivo "./routes/todoRoutes"
 const todoRoutes = require("./routes/todoRoutes");
 
